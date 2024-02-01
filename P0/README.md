@@ -1,9 +1,3 @@
- Practicando Git 2024
+# Práctica 0
 
- Probando VSCode clase
-
- ***********************
-**  Mi segundo cambio....
-*************************
-
-Otro cambio
+Probando el VSCode...
