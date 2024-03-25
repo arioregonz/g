@@ -1,0 +1,193 @@
+body {
+    background-color: black;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    margin: 20px auto auto auto;
+    padding : 5px;
+    margin-bottom: 20px;  
+}
+
+#calculator {
+    width: 37%;
+    height: 520px;
+    margin : auto;
+    border-style: solid;
+    border-width: 2px;
+    padding : 5px;
+    color : rgb(160, 0, 253);
+}
+
+@media (hover: none) and (pointer: coarse) and (orientation: portrait) {
+    #calculator {
+        width: 91%;
+        margin-left: 1.4%;
+        margin-right: 0.7%;
+        height: 620px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) and (orientation: landscape){
+
+ #calculator {
+    height: 530px;
+    width: 94%;
+    margin-left: 1.4%;
+  }
+  
+ #header {
+    height: 29.833px;
+  }
+  
+ #header > h1:nth-child(1) {
+    height: 17px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
+ #code-value {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
+ #result {
+    height: 80px;;
+  }
+
+  
+ #keyboard {
+    height: 125px;
+  }
+  
+  
+ #container {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  
+ #calculator {
+    margin-right: 0px;
+    margin-left: 15px;
+  }
+
+ #calculator {
+      margin-left: 0px;
+      width: auto;
+ }
+
+ #container {
+    width: auto;
+  }
+}
+
+
+#result {
+    width: 98%;
+    height: 25%;
+    margin : auto auto auto auto;
+    border-style: solid;
+    border-width: 2px;
+    padding : 5px;
+    margin-top: auto;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    color : rgb(20, 141, 255);
+}
+
+#codigo {
+    margin-top: 0%;
+    height: 40%;
+    width: 100%;
+    text-align: right;
+    font-size: large;
+    font-family: monospace;
+}
+
+#output {
+    
+    height: 60%;
+    width: 100%;
+    font-size: xx-large;
+    text-align: center;
+    font-family: monospace;
+}
+
+#keyboard {
+    width: 98%;
+    height: 68%;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    border-style: solid;
+    border-width: 2px;
+    padding-top: 5px;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+    padding-bottom: 5px;
+    color : rgb(20, 141, 255);
+    font-family: monospace;
+}
+
+.code {
+    width: 25%;
+    height: 20%;
+    float: left;
+    font-family: monospace;
+    font-weight: bold;
+    
+}
+
+.code {
+    color: red;
+    background-color: black;
+    font-size: large;
+    font-weight: bold;
+}
+
+.modes {
+    color: red;
+    background-color: black;
+    font-size: large;
+    font-weight: bold;
+    width: 33%;
+    height: 20%;
+    float: left;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.numbers, .empty {
+    color : rgb(26, 240, 26);
+    background-color: black;
+    font-size: large;
+    font-weight: bold;
+    width: 33%;
+    height: 20%;
+    float: left;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.numbers, .modes {
+    cursor: pointer;
+}
+
+.code:active, .numbers:active {
+    font-size: medium;
+}
+
+.numbers:focus, .empty:focus {
+    outline: 0;
+}
+
+.code:hover {
+    color : rgb(26, 240, 26) ;
+}
+
+.numbers:hover, .modes:hover {
+    color: red;
+    font-size: medium;
+}
