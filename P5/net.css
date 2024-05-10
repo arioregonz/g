@@ -7,6 +7,13 @@ canvas {
     gap: 20px;
     margin-bottom: 20px;
   }
+
+  .salto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
   
   button {
     background: #282A3A;

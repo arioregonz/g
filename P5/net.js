@@ -2,13 +2,12 @@
 const canvas = document.getElementById('networkCanvas');
 const ctx = canvas.getContext('2d');
 
-let redAleatoria;
+let redAleatoria = 0;
 
 const nodeRadius = 40;
 const nodeRandomDelay = 1000;
 const numNodos = 5;
-const nodeConnect = 2
-
+const nodeConnect = 2;
 
 let nodoOrigen = 0, nodoDestino = 0;
 let rutaMinimaConRetardos;
@@ -251,6 +250,8 @@ function drawNet(nnodes) {
 }
 
 
+
+
 // Función de callback para generar la red de manera aleatoria
 btnCNet.onclick = () => {
 
@@ -263,11 +264,24 @@ btnCNet.onclick = () => {
   
     // Dibujar la red que hemos generado
     drawNet(redAleatoria);
-  
+
+    const Nodos = document.querySelector('.nodos');
+      Nodos.innerText = `${numNodos} nodos`
+
+    const Message = document.querySelector('.message');
+    Message.innerText = `Red Generada`;
 }
+
 
 // Función de callback para generar la ruta mínima
 btnMinPath.onclick = () => {
+  
+  let Tiempo_total = 0;
+
+  if (redAleatoria == 0) {
+    const Message_2 = document.querySelector('.message');
+      Message_2.innerText = `Red no generada. Pulsa el botón generar red primero.`;
+  }
 
     // Supongamos que tienes una red de nodos llamada redAleatoria y tienes nodos origen y destino
     nodoOrigen = redAleatoria[0]; // Nodo de origen
@@ -276,5 +290,24 @@ btnMinPath.onclick = () => {
     // Calcular la ruta mínima entre el nodo origen y el nodo destino utilizando Dijkstra con retrasos
     rutaMinimaConRetardos = dijkstraConRetardos(redAleatoria, nodoOrigen, nodoDestino);
     console.log("Ruta mínima con retrasos:", rutaMinimaConRetardos);
-  
+    for (let i = 0; i < rutaMinimaConRetardos.length; i++) {
+      Tiempo_total += rutaMinimaConRetardos[i].delay ;
   }
+
+  const Tiempo = document.querySelector('.time');
+    Tiempo.innerText = `Tiempo total: ${Tiempo_total.toFixed(2)} segundos`
+
+  // Pintamos los nodos de la ruta de color verde
+  rutaMinimaConRetardos.forEach(nodo => {
+    ctx.beginPath();
+    ctx.arc(nodo.x, nodo.y, nodeRadius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'green';
+    ctx.fill();
+    ctx.stroke();
+    ctx.font = '12px Arial';
+    ctx.fillStyle = 'white';
+    ctx.textAlign = 'center';
+    nodoDesc = "N" + nodo.id + " delay " + Math.floor(nodo.delay);
+    ctx.fillText(nodoDesc, nodo.x, nodo.y + 5);
+  });
+}
