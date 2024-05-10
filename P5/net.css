@@ -25,3 +25,29 @@ canvas {
     font-family: Fredoka;
     font-size: 18pt;
   }
+
+@media screen and (max-width: 500px){
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+  button {
+    width: 25%;
+    height: auto;
+    font-size: 10pt;
+    border-radius: 2px;
+    padding: 5px 10px;
+  }
+  #controls {
+    width: 25%;
+    height: auto;
+  }
+
+  #salto {
+    width: 25%;
+    height: auto;
+  }
+
+};
+  
