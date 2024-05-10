@@ -282,7 +282,7 @@ btnMinPath.onclick = () => {
     const Message_2 = document.querySelector('.message');
       Message_2.innerText = `Red no generada. Pulsa el botón generar red primero.`;
   }
-
+  else {
     // Supongamos que tienes una red de nodos llamada redAleatoria y tienes nodos origen y destino
     nodoOrigen = redAleatoria[0]; // Nodo de origen
     nodoDestino = redAleatoria[numNodos - 1]; // Nodo de destino
@@ -310,4 +310,5 @@ btnMinPath.onclick = () => {
     nodoDesc = "N" + nodo.id + " delay " + Math.floor(nodo.delay);
     ctx.fillText(nodoDesc, nodo.x, nodo.y + 5);
   });
+  }
 }
